@@ -1,0 +1,266 @@
+:root {
+  --sd-bg: #f5f7fb;
+  --sd-card: #ffffff;
+  --sd-ink: #0b1220;
+  --sd-muted: #5f6b7b;
+  --sd-border: #e1e7ef;
+  --sd-accent: #2563eb;
+}
+
+body {
+  background: var(--sd-bg);
+}
+
+.sd-page {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  width: min(1200px, 95vw);
+  margin: 0 auto;
+  padding: 32px 16px 56px;
+  min-height: 100vh;
+  animation: sdFade 0.45s ease;
+  color: var(--sd-ink);
+}
+
+.sd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.sd-subtitle {
+  color: var(--sd-muted);
+}
+
+.sd-score {
+  background: var(--sd-card);
+  border: 1px solid var(--sd-border);
+  border-radius: 12px;
+  padding: 10px 16px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+.sd-card {
+  background: var(--sd-card);
+  border: 1px solid var(--sd-border);
+  border-radius: 16px;
+  padding: 18px;
+  margin: 16px 0;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+}
+
+.sd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.sd-skill {
+  border: 1px solid var(--sd-border);
+  border-radius: 12px;
+  padding: 12px;
+  background: #f9fbff;
+}
+
+.sd-skill-button {
+  text-align: left;
+  cursor: pointer;
+}
+
+.sd-skill-button:hover {
+  border-color: #c7d2fe;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+.sd-skill-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sd-pill {
+  background: #e0e7ff;
+  color: #1e3a8a;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.sd-levels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  gap: 6px;
+  margin: 8px 0 4px;
+}
+
+.sd-levels span {
+  height: 10px;
+  border-radius: 6px;
+  background: #e5edf7;
+}
+
+.sd-levels span.filled {
+  background: #60a5fa;
+}
+
+.sd-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: #e7edf6;
+  overflow: hidden;
+  margin: 8px 0 4px;
+}
+
+.sd-bar span {
+  display: block;
+  height: 100%;
+  background: #60a5fa;
+}
+
+.sd-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.sd-tags span {
+  background: #eef2ff;
+  color: #1e3a8a;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.sd-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.sd-form select,
+.sd-form button {
+  border-radius: 10px;
+  border: 1px solid var(--sd-border);
+  padding: 10px 12px;
+}
+
+.sd-form button {
+  background: var(--sd-accent);
+  color: #ffffff;
+  border: 0;
+  cursor: pointer;
+}
+
+.sd-highlight {
+  background: #ecfeff;
+  border: 1px solid #bae6fd;
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin: 10px 0;
+}
+
+.sd-loading {
+  padding: 24px;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+.sd-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 12, 22, 0.55);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 20;
+}
+
+.sd-modal-card {
+  background: var(--sd-card);
+  border-radius: 16px;
+  padding: 18px;
+  width: min(720px, 95vw);
+  max-height: 80vh;
+  overflow: auto;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+}
+
+.sd-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.sd-modal-header button {
+  border: 0;
+  background: #e2e8f0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sd-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.sd-timeline li {
+  border: 1px solid var(--sd-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  display: grid;
+  gap: 6px;
+}
+
+.sd-timeline li span {
+  color: var(--sd-muted);
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.sd-timeline-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.sd-timeline-score .pass {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.sd-timeline-score .fail {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+@keyframes sdFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .sd-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sd-form {
+    flex-direction: column;
+  }
+}

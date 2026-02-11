@@ -1,0 +1,246 @@
+:root {
+  --md-bg: #f4f7fb;
+  --md-card: #ffffff;
+  --md-ink: #0b1220;
+  --md-muted: #5c6572;
+  --md-border: #e6ecf2;
+  --md-accent: #2563eb;
+  --md-accent-2: #0f766e;
+  --md-warn: #b45309;
+}
+
+body {
+  background: var(--md-bg);
+}
+
+.mentor-dashboard {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: var(--md-ink);
+  width: min(1400px, 96vw);
+  margin: 0 auto;
+  padding: 36px 20px 56px;
+  min-height: 100vh;
+  animation: pageIn 0.5s ease;
+}
+
+.mentor-dashboard h1 {
+  font-size: 30px;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+}
+
+.mentor-dashboard section {
+  margin: 24px 0;
+}
+
+.mentor-dashboard h2 {
+  font-size: 20px;
+  margin: 0 0 12px;
+}
+
+.mentor-dashboard h3 {
+  font-size: 16px;
+  margin: 16px 0 8px;
+  color: var(--md-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.mentor-dashboard h4 {
+  font-size: 15px;
+  margin: 10px 0;
+}
+
+.student-card {
+  background: var(--md-card);
+  border: 1px solid var(--md-border);
+  border-radius: 14px;
+  padding: 16px;
+  margin: 12px 0;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.md-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.md-tile {
+  background: var(--md-card);
+  border: 1px solid var(--md-border);
+  border-radius: 16px;
+  padding: 18px;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: tileIn 0.45s ease forwards;
+  animation-delay: calc(var(--i, 0) * 0.05s);
+  color: var(--md-ink);
+}
+
+.md-tile h2,
+.md-tile h3,
+.md-tile p {
+  color: inherit;
+}
+
+.md-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+}
+
+.md-back {
+  background: transparent;
+  border: 0;
+  color: var(--md-accent);
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.md-card {
+  background: var(--md-card);
+  border: 1px solid var(--md-border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.md-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.md-table th,
+.md-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--md-border);
+  text-align: left;
+}
+
+.md-table a {
+  color: var(--md-accent);
+  text-decoration: none;
+}
+
+.md-table a:hover {
+  text-decoration: underline;
+}
+
+.md-count {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #111827;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tileIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mentor-dashboard,
+  .md-tile {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.student-card strong {
+  font-size: 15px;
+}
+
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.domain-card {
+  background: #f8fafc;
+  border: 1px solid var(--md-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.domain-card p {
+  margin: 4px 0 0;
+  color: var(--md-muted);
+  font-size: 13px;
+}
+
+.domain-card small {
+  display: block;
+  margin-top: 4px;
+  color: var(--md-muted);
+}
+
+.domain-card.CONSISTENT {
+  border-left: 4px solid #16a34a;
+}
+
+.domain-card.IMPROVING {
+  border-left: 4px solid #2563eb;
+}
+
+.domain-card.DROPPING {
+  border-left: 4px solid #dc2626;
+}
+
+.domain-card.LOW {
+  border-left: 4px solid #b45309;
+}
+
+.student-card span {
+  display: inline-block;
+  background: #eef2ff;
+  color: #1e3a8a;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 12px;
+  margin: 4px 6px 0 0;
+}
+
+.loading {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  padding: 24px;
+}
+
+@media (max-width: 640px) {
+  .mentor-dashboard {
+    padding: 20px 14px 36px;
+  }
+
+  .mentor-dashboard h1 {
+    font-size: 24px;
+  }
+}
